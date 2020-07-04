@@ -1,0 +1,67 @@
+<!-- components/activeDetail/cmp.wxml -->
+<view
+ class="ac-detail"
+ wx:for="{{showInfo}}"
+ wx:for-index="aindex"
+ wx:key="item"
+>
+	<view class="ac-header">
+		<view class="userBar" data-index="{{item.act_cid}}" bind:tap="toPerson">
+			<image class="userHead" src="{{item.act_cuserhead}}" />
+			<text class="userName">{{item.act_cname}}</text>
+		</view>
+		<view class="timeBar">
+			<view class="ac-time">
+				<image class="clock" src="../../images/icon/time.png" />
+				<!-- 发布时间 -->
+				<text class="time">{{item.act_ctime}}</text>
+			</view>
+		</view>
+		<view class="numBar">
+			<view class="ac-num">
+				<image class="numPng" src="../../images/icon/canyu.png" />
+				<!-- 参与人数 -->
+				<text class="num">{{item.act_num}}</text>
+			</view>
+		</view>
+	</view>
+	<view
+	 class="ac-con"
+	 data-index="{{item.id}}"
+	 data-uid="{{item.act_cid}}"
+	 data-sort="{{item.activity_sort}}"
+	 bind:tap="toDetail"
+	>
+		<view class="ac-con-head">
+			<!-- 活动类别 -->
+			<span class="ac-sort">{{item.activity_sort}}</span>
+			<!-- 活动名称 -->
+			<text class="ac-title">{{item.activity_title}}</text>
+		</view>
+		<view class="ac-container">
+			<text class="ac-describe">{{item.act_content}}</text>
+			<!-- <t-img img-box="{{item.act_img}}"></t-img> -->
+			<view class="img-container" wx:if="{{imgList[aindex]}}">
+				<image
+				 class="image"
+				 wx:for="{{imgList[aindex]}}"
+				 wx:key="index"
+				 src="{{item}}"
+				 catch:tap="onTap"
+				 data-index="{{aindex}}"
+				 data-src="{{item}}"
+				 wx:if="{{index < 3}}"
+				/>
+				<!-- hidden="{{item == [""]}}" -->
+				<text class="img-num" wx:if="{{imgList[index].length > 3}}">{{imgList[index].length - 3}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="timeLocal">
+		<view class="local">
+			<text class="ef-time">活动时间：{{item.act_time}}</text>
+			<text class="ac-local">活动地点：{{item.act_address}}</text>
+		</view>
+	</view>
+</view>
+

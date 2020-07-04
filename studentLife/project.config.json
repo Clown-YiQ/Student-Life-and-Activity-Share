@@ -1,0 +1,136 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.1",
+	"appid": "wxd8594c6b3fa1ccea",
+	"projectname": "studentLife",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "发布页面",
+					"pathName": "pages/issue/issue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/person/person",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "活动详情",
+					"pathName": "pages/ActionDetail/ActionDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户页面",
+					"pathName": "pages/Personal/Personal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "关注",
+					"pathName": "pages/follow/follow",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "粉丝",
+					"pathName": "pages/MyFans/MyFans",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的发布",
+					"pathName": "pages/MyConcern/MyConcern",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "认证",
+					"pathName": "pages/MyConfirm/MyConfirm",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "参加的人",
+					"pathName": "pages/Participants/Participants",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "二手商品",
+					"pathName": "pages/SecondDetail/SecondDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "参加用户",
+					"pathName": "pages/JoinUser/JoinUser",
+					"scene": null
+				}
+			]
+		}
+	}
+}

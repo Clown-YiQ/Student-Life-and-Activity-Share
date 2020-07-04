@@ -1,0 +1,11 @@
+<!-- Tab布局 -->
+<view class='title'>
+  <view wx:for="{{navList}}" wx:key="index"
+  class="{{index == currentIndex ? 'title-sel-selected' : 'title-sel'}}" 
+  catch:tap="titleClick"
+  data-index="{{index}}"
+  >
+    <text>{{item.name}}</text>
+    <hr class="line-style" />
+  </view>
+</view>

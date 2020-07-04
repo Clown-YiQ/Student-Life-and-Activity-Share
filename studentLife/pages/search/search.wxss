@@ -1,0 +1,31 @@
+/* pages/search/search.wxss */
+
+.container{
+  width: 100%;
+}
+.container .search-box{
+  width: 700rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20rpx auto 0;
+}
+.search{
+  display: inline-block;
+  width: 600rpx;
+  height: 80rpx;
+  padding-left: 20rpx;
+  background-color: #f3f3f3;
+  font-size: 28rpx;
+}
+.text{
+  font-size: 28rpx;
+  display: inline-block;
+}
+.noInfo{
+  display: flex;
+  justify-content: center;
+  font-size: 40rpx;
+  color: #686565;
+  margin-top: 20rpx;
+}

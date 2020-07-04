@@ -1,0 +1,40 @@
+/* components/tag/cmp.wxss */
+.title {
+  width: 100%;
+  height: 88rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+ 
+.title-sel {
+  color: #24272c;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.title-sel  .line-style{
+  background: #fff;
+  height: 6rpx;
+  width: 40rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+ 
+.title-sel-selected{
+  color: #41adbd;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-sel-selected .line-style{
+  background: #41adbd;
+  height: 6rpx;
+  width: 90rpx;
+  position: relative;
+  margin-top: 10rpx;
+}

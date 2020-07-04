@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "a-img":"/components/threeImg/cmp"
+  }
+}

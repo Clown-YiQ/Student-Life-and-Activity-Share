@@ -1,0 +1,10 @@
+<!--pages/JoinUser/JoinUser.wxml-->
+<view class="container">
+  <view class="title">参加用户</view>
+  <view class="userBar" wx:for="{{joinInfo}}">
+    <view class="userhead">
+      <image class="userheadImg" src="{{item.join_userhead}}"/>
+    </view>
+    <view class="userName">{{item.join_uname}}</view>
+  </view>
+</view>

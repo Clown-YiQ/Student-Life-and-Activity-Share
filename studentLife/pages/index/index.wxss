@@ -1,0 +1,284 @@
+/* pages/index/index.wxss */
+
+ /* 导航条 */
+ .headBar{
+   display: flex;
+ }
+ .select-addr{
+  width: 185rpx;
+  display: flex;
+  margin-left: 20rpx;
+  margin-top: 35rpx;
+  font-size: 30rpx;
+  color: #898888;
+  letter-spacing: 1rpx;
+}
+.select-addr .triangle{
+  width:35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+.searchBar{
+  width: 500rpx;
+  display: inline-block;
+}
+.title {
+  width: 100%;
+  height: 88rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+ 
+.title-sel {
+  color: #24272c;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.title-sel  .line-style{
+  background: #fff;
+  height: 6rpx;
+  width: 40rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+ 
+.title-sel-selected{
+  color: #006bff;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-sel-selected .line-style{
+  background: #006bff;
+  height: 6rpx;
+  width: 90rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+swiper{
+  height: 190px;
+}
+.swiper-item{
+  display: flex;
+  margin-top: 20rpx;
+  flex-direction: column;
+}
+.swiper-item image{
+  width: 470rpx;
+  height: 230rpx;
+  line-height: 500rpx;
+  margin: 0 auto;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+  /* padding: 10rpx; */
+}
+.swiper-text{
+  text-align: center;
+  margin-top: 10rpx;
+}
+/* 活动 */
+.ac-detail{
+  width: 97%;
+  padding: 5rpx;
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+}
+.ac-header{
+  width: 90%;
+  margin: 10rpx auto 0;
+  padding: 5rpx;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+.userBar{
+  white-space: nowrap;
+}
+.userBar .userHead{
+  width: 45rpx;
+  height: 45rpx;
+  vertical-align: center;
+}
+.userBar .userName{
+  display: inline-block;
+  width: 200rpx;
+  vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 5rpx;
+  font-size: 28rpx;
+}
+.timeBar .ac-time,.numBar .ac-num{
+  display: inline-block;
+  font-size: 24rpx;
+  margin-left: 50rpx;
+}
+.timeBar .ac-time .clock{
+  width: 25rpx;
+  height: 25rpx;
+}
+.timeBar .ac-time .time{
+  vertical-align: 5rpx;
+  margin-left: 2rpx;
+}
+.numBar .ac-num .numPng{
+  width: 30rpx;
+  height: 30rpx;
+}
+.numBar .ac-num .num{
+  vertical-align: 5rpx;
+}
+.ac-con-head{
+  width: 90%;
+}
+.ac-con{
+  margin-top: 10rpx;
+  /* margin-left: 10rpx; */
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+}
+.ac-con .ac-sort{
+  padding: 5rpx 8rpx 5rpx;
+  border-radius: 10rpx;
+  /* background-color: orangered; */
+  margin-left: 15rpx;
+  font-size: 30rpx;
+}
+.ac-con .ac-title{
+  margin-left: 20rpx;
+  font-weight: 500;
+}
+.ac-container{
+  width: 90%;
+  padding: 15rpx 0 0 15rpx;
+}
+.timeLocal{
+  width: 90%;
+}
+.timeLocal .local{
+  padding-bottom: 15rpx;
+}
+.timeLocal .local text{
+  display: inline-block;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #888282;
+}
+/* 二手商品 */
+.scGoods{
+  width: 97%;
+  padding: 5rpx;
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+}
+.scGoods .gTitle{
+  width: 90%;
+}
+.scGoods .gTitle text{
+  display: block;
+  font-size: 32rpx;
+  margin-left: 30rpx;
+}
+.scGoods .gGood{
+  width: 90%;
+  margin-left: 15rpx;
+}
+.scGoods .gGood .g-detail{
+  font-size: 30rpx;
+  margin-left: 15rpx;
+  padding: 5rpx 0 5rpx;
+}
+.userCon{
+  width: 90%;
+  margin: 10rpx auto 0;
+  padding: 5rpx;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+.userCon .uBar .uHead{
+  width: 45rpx;
+  height: 45rpx;
+  vertical-align: center;
+}
+
+.userCon .uBar{
+  white-space: nowrap;
+}
+.uBar .uName{
+  display: inline-block;
+  width: 200rpx;
+  vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 5rpx;
+  font-size: 28rpx;
+}
+.tBar{
+  position: relative;
+}
+
+.tBar .i-time,.nBar .i-num{
+  display: inline-block;
+  font-size: 24rpx;
+  margin-left: 5rpx;
+}
+.tBar .i-time .clock{
+  width: 25rpx;
+  height: 25rpx;
+}
+.tBar .i-time .time{
+  vertical-align: 5rpx;
+  margin-left: 2rpx;
+}
+/* 生活圈 */
+.lShare{
+  width: 97%;
+  border: 1rpx solid #ccc;
+  padding: 5rpx;
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+}
+
+.uShare{
+  width: 90%;
+  padding: 15rpx 0 0 15rpx;
+  margin-top: 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+}
+
+.uShare .s-detail{
+  margin-left: 15rpx;
+}
+.uShare .comment{
+  display: inline-block;
+  position: absolute;
+  /* top: 400rpx; */
+  left: 430rpx;
+}
+.uShare .comment .commentPng{
+  width: 30rpx;
+  height: 30rpx;
+}
+.uShare .comment .commentText{
+  font-size: 30rpx;
+  vertical-align: 5rpx;
+}
+.uShare .like{
+  display: inline-block;
+  position:  absolute;
+  left: 550rpx;
+}
+.uShare .like image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.uShare .like .likeText{
+  font-size: 30rpx;
+  vertical-align: 5rpx;
+}

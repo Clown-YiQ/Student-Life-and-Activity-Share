@@ -1,0 +1,11 @@
+/* components/personBtn/cmp.wxss */
+.userOp{
+  margin-top: 50rpx;
+  background-color: #fff;
+}
+
+.userOp view{
+  padding: 20rpx 10rpx;
+  border-bottom: 1px solid #ddd;
+  font-size: 36rpx;
+}

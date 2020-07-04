@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="img-container">
+    <image class="image" 
+    wx:for="{{imgBox}}" 
+    wx:key="this" 
+    src="{{item}}" 
+    catch:tap="onTap" 
+    data-index="{{index}}" 
+    data-src="{{item}}"
+    wx:if="{{index < 3}}" />
+    <text class="img-num" wx:if="{{imgBox.length > 3}}">{{imgBox.length - 3}}</text>
+  </view>
+</view>

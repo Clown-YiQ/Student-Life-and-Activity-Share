@@ -1,0 +1,123 @@
+/* pages/MyConcern/MyConcern.wxss */
+.concern{
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  /* padding: 5rpx; */
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+}
+.ac-header{
+  width: 100%;
+  margin: 10rpx auto 0;
+  padding: 5rpx;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.ac-con-head{
+  width: 100%;
+  display: flex;
+}
+.ac-con{
+  margin-top: 10rpx;
+  /* margin-left: 10rpx; */
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.ac-con .ac-sort{
+  padding: 5rpx 8rpx 0;
+  border-radius: 10rpx;
+  background-color: #55a3a3;
+  margin-left: 15rpx;
+  font-size: 24rpx;
+  height: 45rpx;
+  color: #fff;
+}
+.ac-con .ac-title{
+  margin-left: 10rpx;
+  font-weight: 500;
+}
+.ac-container{
+  width: 90%;
+  padding: 10rpx 0 0 10rpx;
+}
+.ac-container .ac-describe{
+  display: block;
+  height: 30rpx;
+  padding-bottom: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.timeLocal{
+  width: 50%;
+  display: inline-block;
+}
+.timeLocal .local{
+  padding-bottom: 15rpx;
+}
+.timeLocal .local text{
+  display: inline-block;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #888282;
+}
+.delete{
+  width: 100%;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 10rpx 0;
+  font-weight: 600;
+}
+
+.second{
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  /* padding: 5rpx; */
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+}
+.sec-con-head{
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx;
+}
+
+.sec-con{
+  width: 100%;
+  padding: 15rpx;
+}
+.sec-con .sec-detail{
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow:hidden;
+}
+
+.share{
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  /* padding: 5rpx; */
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+}
+
+.share-con-head{
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx;
+}
+
+.share-con-head .share-con{
+  width: 70%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow:hidden;
+}
+
+.share-con-head .share-time{
+  width: 30%;
+}

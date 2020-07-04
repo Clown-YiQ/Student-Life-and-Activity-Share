@@ -1,0 +1,23 @@
+/* pages/Participants/Participants.wxss */
+.container{
+  width: 97%;
+}
+.userBar{
+  width: 100%;
+  display: flex;
+  margin: 10rpx;
+  padding: 10rpx;
+  border-bottom: 1px solid #ccc;
+}
+.userBar .userHead{
+  height: 80rpx;
+}
+.userBar .userHead .headPic{
+  width: 80rpx;
+  height: 80rpx;
+}
+.userBar .userName{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left:20rpx;
+}

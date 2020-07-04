@@ -1,0 +1,22 @@
+<!-- components/secondDetail/cmp.wxml -->
+<view class="scGoods" wx:for="{{secondInfo}}" wx:key="item" wx:for-index="aindex">
+  <view class="userCon">
+    <view class="uBar" data-index="{{item.sc_cid}}" catch:tap="toPerson">
+      <image class="uHead" src="{{item.sc_userhead}}" />
+      <text class="uName">{{item.sc_cname}}</text>
+    </view>
+  </view>
+  <view class="gTitle" data-index="{{item.sc_id}}" catch:tap="toDetail">
+    <text class="g-name">商品名称：{{item.sc_title}}</text>
+    <text class="g-money">价格：{{item.sc_price}}元</text>
+  </view>
+  <view class="gGood">
+    <text class="g-detail" data-index="{{item.sc_id}}" catch:tap="toDetail">{{item.sc_con}}</text>
+    <view class="img-container">
+      <image class="image" wx:for="{{imgList1[aindex]}}" wx:key="index" src="{{item}}" catch:tap="onTap" data-index="{{aindex}}" data-src="{{item}}" wx:if="{{index < 3}}" />
+      <!-- hidden="{{item == [""]}}" -->
+      <text class="img-num" wx:if="{{imgList1[index].length > 3}}">{{imgList1[index].length - 3}}</text>
+    </view>
+  </view>
+</view>
+

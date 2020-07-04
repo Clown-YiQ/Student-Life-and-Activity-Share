@@ -1,0 +1,38 @@
+<!-- 用户页面 -->
+<view class="container">
+  <view class="userInfo">
+    <image class="userPic" src="{{userInfo.u_userhead}}" />
+    <view class="userName">{{userInfo.u_name}}</view>
+    <view class="foBar">
+      <view class="follow">关注 {{followUser.length}}</view>
+      |
+      <view class="fans">粉丝 {{fansInfo.length}}</view>
+    </view>
+  </view>
+  <scroll-view class="scroll-view" scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <t-tag nav-list="{{navList}}" catch:title="onTapTitle"></t-tag>
+    <!-- 内容布局 -->
+    <view class="item-detail">
+      <view hidden="{{currentIndex != 0}}">
+        <!-- 活动 -->
+        <ac-detail show-info="{{actInfo}}" img-list="{{actImg}}"></ac-detail>
+      </view>
+      <view hidden="{{currentIndex != 1}}">
+        <!-- 二手商品 -->
+        <sec-detail second-info="{{secInfo}}" img-list1="{{secImg}}"></sec-detail>
+      </view>
+      <view hidden="{{currentIndex != 2}}">
+        <!-- 生活圈 -->
+        <share-detail share-info="{{shInfo}}" share-img="{{shImg}}"></share-detail>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="followBar" wx:if="{{curId != uid}}">
+  <view class="followBtn" wx:if="{{!isFollow}}" catch:tap="followUser">
+    <text class="followText">关注</text>
+  </view>
+  <view class="followBtn" wx:if="{{isFollow}}" catch:tap="deleteFollowUser">
+    <text class="followText">已关注</text>
+  </view>
+  </view>
+</view>

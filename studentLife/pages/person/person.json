@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "person-btn":"/components/personBtn/cmp"
+  }
+}

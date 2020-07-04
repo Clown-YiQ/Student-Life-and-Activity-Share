@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "a-img":"/components/threeImg/cmp"
+  },
+  "navigationBarTitleText": "活动详情"
+}

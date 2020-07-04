@@ -1,0 +1,17 @@
+<!-- pages/MyJoin/MyJoin.wxml -->
+<view class="container">
+  <view class="myJoin" wx:for="{{joinInfo}}" wx:key="item">
+    <view class="ac-con" bind:tap="toDetail" data-index="{{item.join_act_id}}" data-id="{{item.join_uid}}">
+      <view class="ac-con-head">
+        <span class="ac-sort">{{item.join_act_sort}}</span>
+        <text class="ac-title">{{item.join_act_title}}</text>
+      </view>
+      <view class="timeLocal">
+          <view class="local">
+            <text class="ef-time">活动时间：{{item.join_act_ctime}}</text>
+          </view>
+        </view>
+    </view>
+    <view class="delete" data-index="{{item.id}}" bind:tap="deleteJoinInfo">退出</view>
+  </view>
+</view>

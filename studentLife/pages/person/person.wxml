@@ -1,0 +1,38 @@
+<!-- pages/person/person.wxml -->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      点击登录
+    </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="userOp">
+    <view class="myIssue" bind:tap="onTapToConcern">
+      <text class="iconfont icon-copy" ></text>
+      我的发布
+    </view>
+    <view class="myJoin" bind:tap="onTapMyJoin">
+      <text class="iconfont icon-joinin" ></text>
+      我的参加
+    </view>
+    <view class="myConcern" data-index="0" bind:tap="onTapTo">
+      <text class="iconfont icon-guanzhu"></text>
+      我的关注
+    </view>
+    <view class="myFans" data-index="1" bind:tap="onTapToFans">
+      <text class="iconfont icon-fans"></text>
+      我的粉丝
+    </view>
+    <view class="myConnection" bind:tap="onTapToCollection">
+      <text class="iconfont icon-shoucang" ></text>
+      我的收藏
+    </view>
+    <view class="myConfirm" data-userInfo="{{userInfo}}" bind:tap="confirmTo">
+      <text class="iconfont icon-renzheng"></text>
+      {{mySchool ? mySchool : "我的认证"}}
+    </view>
+  </view>
+</view>

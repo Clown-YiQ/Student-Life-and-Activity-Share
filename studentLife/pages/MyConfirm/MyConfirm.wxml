@@ -1,0 +1,68 @@
+<!-- pages/MyConfirm/MyConfirm.wxml -->
+<view class="container">
+	<view class="userinfo">
+		<block>
+			<image class="userinfo-avatar" src="{{avatarUrl}}" mode="cover" />
+			<text class="userinfo-nickname">{{nickName}}</text>
+		</block>
+	</view>
+	<form bindsubmit="userSubmit">
+		<view class="schoolBar">
+			<view class="section">
+				<view class="section__title">请选择您的学校</view>
+				<picker
+				 class="pickerBar"
+				 mode="multiSelector"
+				 bindchange="bindMultiPickerChange"
+				 bindcolumnchange="bindMultiPickerColumnChange"
+				 value="{{multiIndex}}"
+				 range="{{multiArray}}"
+				>
+					<view class="picker">
+						{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+						<image class="bot-arrow" src="../../images/icon/bot-arrow.png" />
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="stuName">
+			<input
+			 class="studentName"
+			 name="stuName"
+			 placeholder="请输入你的姓名"
+			 value="{{form.stuName}}"
+			 type="text"
+			/>
+		</view>
+		<view class="stuId">
+			<input
+			 class="studentId"
+			 name="stuId"
+			 placeholder="请输入你的学号"
+			 value="{{form.stuId}}"
+			 type="number"
+			/>
+		</view>
+		<view class="phoneNumber">
+			<input
+			 class="phone"
+			 type="number"
+			 name="phone"
+			 placeholder="请输入手机号"
+			 value="{{form.phone}}"
+			/>
+		</view>
+		<view class="passWord">
+			<input
+			 class="password"
+			 type="password"
+			 name="password"
+			 placeholder="请输入后台登录密码"
+			 value="{{form.password}}"
+			/>
+		</view>
+
+		<button form-type="submit" class="confirmBtn">提交</button>
+	</form>
+</view>
+

@@ -1,0 +1,35 @@
+<!-- components/share/cmp.wxml -->
+<view class="lShare" wx:for="{{shareInfo}}" wx:for-index="aindex" wx:key="item">
+  <view class="userCon" data-index="{{item.share_uid}}" bind:tap="toPerson">
+    <view class="uBar">
+      <image class="uHead" src="{{item.share_userhead}}" />
+      <text class="uName">{{item.share_uname}}</text>
+    </view>
+  </view>
+  <view class="uShare">
+    <text class="s-detail" bind:tap="toDetail" data-index="{{item.share_id}}" data-id="{{item.share_uid}}">{{item.share_con}}</text>
+    <view class="img-container">
+        <image class="image" wx:for="{{shareImg[aindex]}}" wx:key="this" src="{{item}}" catch:tap="onTap" data-index="{{aindex}}" data-src="{{item}}" wx:if="{{index < 3}}" />
+        <!-- hidden="{{item == [""]}}" -->
+        <text class="img-num" wx:if="{{shareImg[index].length > 3}}">{{shareImg[index].length - 3}}</text>
+      </view>
+    <view class="tBar">
+      <view class="i-time">
+        <image class="clock" src="../../images/icon/time.png" />
+        <text class="time">{{item.share_ctime}}</text>
+      </view>
+      <view class="comment">
+        <image class="commentPng" src="../../images/icon/comment.png" />
+        <text class="commentText">评论</text>
+      </view>
+      <view class="like" bind:tap="onLike" wx:if="{{!isLike}}">
+        <image class="dislikePng" data-shareIndex="0"   src="../../images/icon/heart.png" />
+        <text class="likeText">赞</text>
+      </view>
+      <view class="like" bind:tap="onDisike" wx:if="{{isLike}}">
+        <image class="likePng" data-shareIndex="0"  src="../../images/icon/like.png" />
+        <text class="likeText">取消</text>
+      </view>
+    </view>
+  </view>
+</view>

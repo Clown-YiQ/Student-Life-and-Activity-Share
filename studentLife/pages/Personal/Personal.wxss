@@ -1,0 +1,298 @@
+/* 用户信息 */
+.container{
+  width: 97%;
+  padding: 5rpx;
+}
+
+.userInfo{
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+}
+.userInfo .userPic{
+  width: 130rpx;
+  height: 130rpx;
+  margin: 30rpx auto 10rpx;
+  border-radius: 65rpx;
+  border: 2px solid #55a3a3;
+}
+.userName{
+  margin: 10rpx auto 10rpx;
+}
+.foBar{
+  display: flex;
+  margin: 0 auto;
+}
+.foBar .follow,.foBar .fans{
+  padding: 0 5rpx 0;
+}
+
+.title {
+  width: 100%;
+  height: 88rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+ 
+.title-sel {
+  color: #24272c;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.title-sel  .line-style{
+  background: #fff;
+  height: 6rpx;
+  width: 40rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+ 
+.title-sel-selected{
+  color: #006bff;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-sel-selected .line-style{
+  background: #006bff;
+  height: 6rpx;
+  width: 90rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+/* 活动 */
+.ac-detail{
+  width: 97%;
+  padding: 5rpx;
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+  transform: translateX(7rpx);
+}
+.ac-header{
+  width: 90%;
+  margin: 10rpx auto 0;
+  padding: 5rpx;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+.userBar{
+  white-space: nowrap;
+}
+.userBar .userHead{
+  width: 45rpx;
+  height: 45rpx;
+  vertical-align: center;
+}
+.userBar .userName{
+  display: inline-block;
+  width: 200rpx;
+  vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 5rpx;
+  font-size: 28rpx;
+}
+.timeBar .ac-time,.numBar .ac-num{
+  display: inline-block;
+  font-size: 24rpx;
+  margin-left: 50rpx;
+}
+.timeBar .ac-time .clock{
+  width: 25rpx;
+  height: 25rpx;
+}
+.timeBar .ac-time .time{
+  vertical-align: 5rpx;
+  margin-left: 2rpx;
+}
+.numBar .ac-num .numPng{
+  width: 30rpx;
+  height: 30rpx;
+}
+.numBar .ac-num .num{
+  vertical-align: 5rpx;
+}
+.ac-con-head{
+  width: 90%;
+}
+.ac-con{
+  margin-top: 10rpx;
+  /* margin-left: 10rpx; */
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+}
+.ac-con .ac-sort{
+  padding: 5rpx 8rpx 5rpx;
+  border-radius: 10rpx;
+  background-color: orangered;
+  margin-left: 15rpx;
+  font-size: 30rpx;
+}
+.ac-con .ac-title{
+  margin-left: 20rpx;
+  font-weight: 500;
+}
+.ac-container{
+  width: 90%;
+  padding: 15rpx 0 0 5rpx;
+}
+.timeLocal{
+  width: 90%;
+}
+.timeLocal .local{
+  padding-bottom: 15rpx;
+}
+.timeLocal .local text{
+  display: inline-block;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #888282;
+}
+/* 二手商品 */
+.scGoods{
+  width: 97%;
+  padding: 5rpx;
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+  transform: translateX(7rpx);
+}
+.scGoods .gTitle{
+  width: 90%;
+}
+.scGoods .gTitle text{
+  display: block;
+  font-size: 32rpx;
+  margin-left: 30rpx;
+}
+.scGoods .gGood{
+  width: 90%;
+  margin-left: 5rpx;
+}
+.scGoods .gGood .g-detail{
+  font-size: 30rpx;
+  margin-left: 15rpx;
+  padding: 5rpx 0 5rpx;
+}
+/* 生活圈用户信息 */
+.userCon{
+  width: 90%;
+  margin: 10rpx auto 0;
+  padding: 5rpx;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+.userCon .uBar .uHead{
+  width: 45rpx;
+  height: 45rpx;
+  vertical-align: center;
+}
+
+.userCon .uBar{
+  white-space: nowrap;
+}
+.uBar .uName{
+  display: inline-block;
+  width: 200rpx;
+  vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 5rpx;
+  font-size: 28rpx;
+}
+.tBar{
+  position: relative;
+  width: 100%;
+}
+
+.tBar .i-time,.nBar .i-num{
+  display: inline-block;
+  font-size: 24rpx;
+  margin-left: 5rpx;
+}
+.tBar .i-time .clock{
+  width: 25rpx;
+  height: 25rpx;
+}
+.tBar .i-time .time{
+  vertical-align: 5rpx;
+  margin-left: 2rpx;
+}
+/* 生活圈 */
+.lShare{
+  width: 97%;
+  border: 1rpx solid #ccc;
+  padding: 5rpx;
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+  transform: translateX(7rpx);
+}
+
+.uShare{
+  width: 100%;
+  padding: 15rpx 0 0 15rpx;
+  margin-top: 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+}
+.uShare .tImg{
+  width: 90%;
+  transform: translateX(-10rpx);
+}
+.uShare .s-detail{
+  margin-left: 15rpx;
+}
+.uShare .comment{
+  display: inline-block;
+  position: absolute;
+  /* top: 400rpx; */
+  left: 430rpx;
+}
+.uShare .comment .commentPng{
+  width: 30rpx;
+  height: 30rpx;
+}
+.uShare .comment .commentText{
+  font-size: 30rpx;
+  vertical-align: 5rpx;
+}
+.uShare .like{
+  display: inline-block;
+  position:  absolute;
+  left: 550rpx;
+}
+.uShare .like image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.uShare .like .likeText{
+  width: 50rpx;
+  font-size: 30rpx;
+  vertical-align: 5rpx;
+}
+
+.followBar{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 60rpx;
+  padding-top: 10rpx;
+  padding-bottom: 8rpx;
+  border-top: 1px solid #8d8d8d;
+  text-align: center;
+  background-color: #fff;
+}
+.followBar .followText{
+  font-size: 34rpx;
+  line-height: 60rpx;
+  font-weight: 700;
+}
+.scroll-view{
+  margin-bottom: 80rpx;
+}

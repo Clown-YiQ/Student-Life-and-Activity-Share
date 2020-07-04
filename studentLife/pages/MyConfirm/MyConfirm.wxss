@@ -1,0 +1,67 @@
+/* pages/MyConfirm/MyConfirm.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding-bottom: 20rpx; */
+  background-color: #fff;
+  padding: 40rpx 0;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.schoolBar{
+  display: flex;
+  justify-content: center;
+}
+.schoolBar .pickerBar{
+  margin-top: 20rpx;
+}
+.schoolBar .section__title{
+  text-align: center;
+}
+.schoolBar .picker{
+  border:2px solid #ddd;
+  padding: 10rpx;
+  margin-top: 40rpx;
+}
+.schoolBar .bot-arrow{
+  width: 30rpx;
+  height: 30rpx;
+}
+.confirmBtn{
+  text-align: center;
+  margin: 40rpx auto 0;
+  padding: 20rpx 20rpx 20rpx 20rpx;
+  background-color: #55a3a3;
+  border-radius: 10px;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.phoneNumber,.stuName,.stuId,.passWord{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 25rpx;
+}
+.stuName .studentName,.stuId .studentId,.phoneNumber .phone,.passWord .password{
+  width: 290rpx;
+  border: 1px solid #ddd;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+}

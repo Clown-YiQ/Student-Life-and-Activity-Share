@@ -1,0 +1,91 @@
+/* pages/MyFans/MyFans.wxss */
+.container {
+  width: 97%;
+  margin: 0 auto;
+}
+
+.searchFollow{
+  width: 80%;
+  height: 60rpx;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ddd;
+  border-radius: 20px;
+}
+
+.follow{
+  margin-top: 20rpx;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.search{
+  color:#fff;
+  font-size: 30rpx;
+  letter-spacing: 5rpx;
+}
+
+.userBar {
+  display: flex;
+  padding-bottom: 15rpx;
+}
+
+.userBar .userHead {
+  display: inline-block;
+}
+
+.userBar .userHead .userPic {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 20rpx;
+}
+
+.userBar .userInfo {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 80rpx;
+  padding-left: 10rpx;
+}
+.userBar .userInfo .userName{
+  line-height: 80rpx;
+  margin-left: 10rpx;
+}
+ /* .userBar .userIssue{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
+ .follow .fBtn{
+  width: 35%;
+  height: 60rpx;
+  margin-top: 10rpx;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  text-align: center;
+  margin-right: 20rpx;
+}
+
+ .follow .fBtn .plus,
+ .follow .fBtn .yes {
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: -6rpx;
+}
+ .follow .fBtn .fBtnText{
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.auth{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.auth .section{
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}

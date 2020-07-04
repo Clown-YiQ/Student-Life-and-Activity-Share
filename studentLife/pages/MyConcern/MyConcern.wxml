@@ -1,0 +1,51 @@
+<!-- pages/MyConcern/MyConcern.wxml -->
+<view class="container">
+  <t-tag nav-list="{{navList}}" catch:title="onTapTitle"></t-tag>
+  <view class="item-detail">
+    <view hidden="{{currentIndex != 0}}">
+      <view class="concern" wx:for="{{activitiesInfo}}" wx:key="item">
+        <view class="ac-con" bind:tap="toDetail" data-index="{{item.id}}">
+          <view class="ac-con-head">
+            <span class="ac-sort">{{item.activity_sort}}</span>
+            <text class="ac-title">{{item.activity_title}}</text>
+            <view class="timeLocal">
+              <view class="local">
+                <text class="ef-time">活动时间：{{item.act_time}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="ac-container">
+            <view class="ac-describe">{{item.act_content}}</view>
+            <t-img></t-img>
+          </view>
+        </view>
+        <view class="delete" data-index="{{item.id}}" bind:tap="deleteActivity">删除</view>
+      </view>
+    </view>
+    <view hidden="{{currentIndex != 1}}">
+      <view class="second" wx:for="{{secondInfo}}">
+        <view class="secCon" data-index="{{item.sc_id}}" catch:tap="toSecondDetail">
+          <view class="sec-con-head">
+            <view class="sec-title">{{item.sc_title}}</view>
+            <view class="ac-price">{{item.sc_price}}元</view>
+          </view>
+          <view class="sec-con">
+            <view class="sec-detail">{{item.sc_con}}</view>
+          </view>
+        </view>
+        <view class="delete" data-index="{{item.sc_id}}" bind:tap="deleteSecond">删除</view>
+      </view>
+    </view>
+    <view hidden="{{currentIndex != 2}}">
+      <view class="share" wx:for="{{shareInfo}}">
+        <view class="shareCon" bind:tap="toDetail" data-index="{{item.share_id}}" data-id="{{item.share_uid}}" bind:tap="toShareDetail">
+          <view class="share-con-head">
+            <view class="share-con">{{item.share_con}}</view>
+            <view class="sahre-time">{{item.share_ctime}}</view>
+          </view>
+        </view>
+        <view class="delete" data-index="{{item.share_id}}" bind:tap="deleteShare">删除</view>
+      </view>
+    </view>
+  </view>
+</view>

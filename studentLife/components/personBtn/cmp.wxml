@@ -1,0 +1,7 @@
+<!-- components/personBtn/cmp.wxml -->
+<view class="userOp">
+  <view class="items" wx:for="{{btnList}}">
+    <text class="iconfont {{item.icon}}"></text>
+    {{item.name}}
+  </view>
+</view>

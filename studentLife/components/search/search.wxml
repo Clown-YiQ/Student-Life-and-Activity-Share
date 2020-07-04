@@ -1,0 +1,5 @@
+<!-- components/search/search.wxml -->
+<view class="search-main" bind:tap="onSearch">
+    <input class="search" disabled="{{true}}" type="text" placeholder="请选择搜索类别" value="{{value}}"></input>
+    <text class="text" >搜索</text>
+</view>

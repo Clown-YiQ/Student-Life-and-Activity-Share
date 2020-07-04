@@ -1,0 +1,40 @@
+/* pages/MyConnection/MyConnection.wxss */
+/* pages/MyConcern/MyConcern.wxss */
+.concern{
+  width: 97%;
+  padding: 5rpx;
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+}
+.second{
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  /* padding: 5rpx; */
+  border: 1rpx solid #ccc;
+  margin: 15rpx auto 0;
+}
+.sec-con-head{
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx;
+}
+
+.sec-con{
+  width: 100%;
+  padding: 15rpx;
+}
+.sec-con .sec-detail{
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow:hidden;
+}
+
+.delete{
+  width: 100%;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 10rpx 0;
+  font-weight: 600;
+}

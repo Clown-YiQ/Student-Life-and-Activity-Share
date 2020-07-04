@@ -1,0 +1,158 @@
+<!-- 活动详情页面 -->
+<view class="container">
+	<view class="header">
+		<view class="userBar">
+			<image class="userHead" src="{{detailInfo.act_cuserhead}}" />
+			<view class="userInfo">
+				<text class="userName">{{detailInfo.act_cname}}</text>
+				<text class="ac-time">{{detailInfo.act_ctime}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="detailTitle">
+		<text class="detail-sort">{{detailInfo.activity_sort}}</text>
+		<text class="detail-title">{{detailInfo.activity_title}}</text>
+	</view>
+	<view class="detailInfo">
+		<text class="detail-info">{{detailInfo.act_content}}</text>
+	</view>
+	<view class="detailImg" wx:if="{{flag}}">
+		<a-img img-box="{{imgBox}}" />
+	</view>
+	<view class="localAndTime">
+		<view class="address">活动地点：{{detailInfo.act_address}}</view>
+		<view class="actTime">活动时间：{{detailInfo.act_time}}</view>
+		<view class="actNum">活动人数：{{detailInfo.act_num}}</view>
+		<view class="phone">联系方式：{{isJoin ? phoneNumber : "*******"}}</view>
+	</view>
+	<view class="btnBar">
+		<!-- 弹出输入框 -->
+		<view class="comment" bindtap="showDialogBtn">评论</view>
+		<!-- 弹窗 -->
+		<view
+		 class="modal-mask"
+		 bindtap="hideModal"
+		 catchtouchmove="preventTouchMove"
+		 wx:if="{{showModal}}"
+		/>
+		<view class="modal-dialog" wx:if="{{showModal}}">
+			<form bindsubmit="onConfirm">
+				<view class="modal-title">评论信息</view>
+				<view class="modal-content">
+					<view class="modal-input">
+						<input
+						 name="comment"
+						 value="{{form.comment}}"
+						 placeholder-class="input-holder"
+						 type="text"
+						 maxlength="30"
+						 class="input"
+						 placeholder="评论"
+						/>
+					</view>
+				</view>
+				<view class="modal-footer">
+					<button class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</button>
+					<button class="btn-confirm" form-type="submit" data-status="confirm">确定</button>
+				</view>
+			</form>
+		</view>
+		<view class="join" wx:if="{{!isJoin}}" catch:tap="onJoin">参加</view>
+		<view class="quit" wx:if="{{isJoin}}" catch:tap="onQuit">退出</view>
+	</view>
+	<view/>
+	<view class="joinUser">
+		<text class="joinTitle">参加用户</text>
+		<view class="joinUserBar">
+			<view class="userBar" wx:for="{{joinUserInfo}}" wx:key="index">
+				<image class="headPic" src="{{item.join_userhead}}" />
+				<text class="userName">{{item.join_uname}}</text>
+			</view>
+		</view>
+		<view class="more" bind:tap="toMore" data-index="{{detailInfo.id}}">更多></view>
+	</view>
+	<view class="commentBar">
+		<view
+		 class="commentState"
+		 wx:for="{{commentInfo}}"
+		 wx:for-item="comItem"
+		 wx:key="item"
+		>
+			<view class="comUser">
+				<image class="userHead" src="{{comItem.com_userhead}}" />
+				<view class="userCon">
+					<text class="userName">{{comItem.com_uname}}</text>
+					<text class="commentTime">{{comItem.com_time}}</text>
+				</view>
+			</view>
+			<!-- 弹出输入框 -->
+			<view
+			 class="answer"
+			 bindtap="showDialogBtn1"
+			 data-index="{{comItem.com_id}}"
+			 data-con="{{comItem.com_con}}"
+			 data-name="{{comItem.com_uname}}"
+			>回复
+			</view>
+			<view
+			 class="deleteCom"
+			 bindtap="deleteCom"
+			 data-index="{{comItem.com_id}}"
+			 data-cid="{{comItem.com_uid}}"
+			>删除
+			</view>
+			<!-- 弹窗 -->
+			<view
+			 class="modal-mask"
+			 bindtap="hideModal"
+			 catchtouchmove="preventTouchMove"
+			 wx:if="{{showModal1}}"
+			/>
+			<view class="modal-dialog" wx:if="{{showModal1}}">
+				<form bindsubmit="onAnswer">
+					<view class="modal-title">回复评论</view>
+					<view class="modal-content">
+						<view class="modal-input">
+							<input
+							 name="answer"
+							 value="{{answerForm.answer}}"
+							 placeholder-class="input-holder"
+							 type="text"
+							 maxlength="30"
+							 class="input"
+							 placeholder="评论"
+							/>
+						</view>
+					</view>
+					<view class="modal-footer">
+						<button class="btn-cancel" bindtap="onCancel1" data-status="cancel">取消</button>
+						<button class="btn-confirm" form-type="submit">确定</button>
+					</view>
+				</form>
+			</view>
+			<!--  -->
+			<view class="commentText">{{comItem.com_con}}</view>
+			<view class="answerBar">
+				<view
+				 class="answerUser"
+				 wx:for="{{answerInfo}}"
+				 bindtap="showDialogBtn1"
+				 bindlongpress="deleteAnswer"
+				 data-index="{{item.com_id}}"
+				 data-cid="{{item.com_uid}}"
+				 data-con="{{comItem.com_con}}"
+				 data-name="{{item.com_uname}}"
+				 wx:if="{{comItem.com_con == item.com_parCon}}"
+				 wx:key="index"
+				>
+					<view class="userCon">
+						<text class="userName">{{item.com_uname}} 回复：{{item.com_parName}}</text>
+						<text class="answerTime">{{item.com_time}}</text>
+					</view>
+					<view class="answerText">{{item.com_con}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+

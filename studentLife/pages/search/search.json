@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "h-search": "/components/search/search",
+    "ac-detail":"/components/activeDetail/cmp",
+    "sec-detail":"/components/secondDetail/cmp",
+    "share-detail":"/components/share/cmp"
+  }
+}

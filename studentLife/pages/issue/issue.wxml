@@ -1,0 +1,183 @@
+<!-- pages/Issue/issue.wxml -->
+<view class='ticket-container'>
+	<scroll-view
+	 scroll-y
+	 bindscrolltoupper="upper"
+	 bindscrolltolower="lower"
+	 bindscroll="scroll"
+	 scroll-into-view="{{toView}}"
+	 scroll-top="{{scrollTop}}"
+	>
+		<!-- Tab布局 -->
+		<view class='title'>
+			<view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+				<text>组团</text>
+				<hr class="line-style" />
+			</view>
+			<view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
+				<text>跳蚤市场</text>
+				<hr class="line-style" />
+			</view>
+			<view class="{{2 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='2'>
+				<text>生活圈</text>
+				<hr class="line-style" />
+			</view>
+		</view>
+		<!-- 内容布局 -->
+		<swiper class='swiper' bindchange='pagechange' current='{{currentIndex}}'>
+			<swiper-item class='swiper act'>
+				<form bindsubmit="actSubmit">
+					<view class='record-item' class='record-item'>
+						<view class='name'>
+							<span>活动名称：</span>
+							<input placeholder="请输入活动名称" name="activityTitle" value="{{form.activityTitle}}" />
+						</view>
+						<view class='name sort'>
+							<view class="section__title">活动类别：</view>
+							<picker bindchange="bindPickerChange" value="{{index}}" range="{{arraySort}}">
+								<view class="picker">{{arraySort[index] ? arraySort[index] : '点击选择活动类别'}}</view>
+							</picker>
+						</view>
+						<!-- 活动地点 -->
+						<view class="name t-address" bindtap="openMap">
+							<text class="key">活动地点：</text>
+							<view name="address" class="value address" bindtap="addressChange">
+								{{address}}
+							</view>
+						</view>
+						<!-- 有效时间 -->
+						<view class="name t-sign-time">
+							<text class="key">活动时间：</text>
+							<picker
+							 mode="date"
+							 value="{{date}}"
+							 start="{{date}}"
+							 end="2020-09-01"
+							 bindchange="bindDateChange"
+							>
+								<view class="value" name="endtime">{{date}}</view>
+							</picker>
+						</view>
+						<view class='name'>
+							<span>活动人数：</span>
+							<input placeholder="请输入活动人数" name="activityNum" value="{{form.activityNum}}" />
+						</view>
+					</view>
+					<view class='name con'>
+						<span>活动内容：</span>
+						<textarea
+						 class="textarea"
+						 placeholder="请输入活动内容"
+						 name="activityCon"
+						 value="{{form.activityCon}}"
+						 maxlength="{{max}}"
+						 bindinput="onContentInput"
+						/>
+						<view class="indicator">{{currentWordNumber}}/{{max}}</view>
+					</view>
+					<!-- 选择图片 -->
+					<view class='up-pic'>
+						<view class='flex pic-box'>
+							<block wx:key="imgbox" wx:for="{{imgbox}}">
+								<view class='ap-box'>
+									<view class='add-pic'>
+										<image class='add-pic' src='{{item}}' />
+										<view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+											<image class='img' src='../../images/icon/delete.png' />
+											<!-- 右上角的删除按钮图片 -->
+										</view>
+									</view>
+								</view>
+							</block>
+							<view class='add-pic' bindtap='addPic1' wx:if="{{imgbox.length<6}}">
+								<image class='img-ad' src='../../images/icon/add.png' />
+								<!-- +号图片 -->
+							</view>
+						</view>
+					</view>
+					<!-- <button class="ibtn" bind:tap="onActivityTap">发布</button> -->
+					<button class="ibtn" form-type="submit">发布</button>
+				</form>
+			</swiper-item>
+			<!-- 二手商品 -->
+			<swiper-item class='swiper noX'>
+				<form bindsubmit="secSubmit">
+					<view wx:for-item="item" class='record-item'>
+						<view class='name'>
+							<span>商品名称：</span>
+							<input name="secTitle" value="{{form1.secTitle}}" placeholder="请输入商品名称" />
+						</view>
+					</view>
+					<view wx:for-item="item" class='record-item' wx:key="index">
+						<view class='name'>
+							<span>商品价格：</span>
+							<input name="secPrice" value="{{form1.secPrice}}" placeholder="请输入商品价格" />
+						</view>
+					</view>
+					<view class='name con'>
+						<span>商品详情：</span>
+						<textarea name="secCon" value="{{form1.secCon}}" maxlength="{{max1}}"
+             bindinput="onContentInput1" placeholder="请输入商品详情" />
+            <view class="indicator">{{currentWordNumber1}}/{{max1}}</view>
+					</view>
+					<!-- 选择图片 -->
+					<view class='up-pic'>
+						<view class='flex pic-box'>
+							<block wx:key="imgbox" wx:for="{{scImgBox}}">
+								<view class='ap-box'>
+									<view class='add-pic'>
+										<image class='add-pic' src='{{item}}' />
+										<view class='img-de' data-deindex='{{index}}' bindtap='imgDelete2'>
+											<image class='img' src='../../images/icon/delete.png' />
+											<!-- 右上角的删除按钮图片 -->
+										</view>
+									</view>
+								</view>
+							</block>
+							<view class='add-pic' bindtap='addPic2' wx:if="{{scImgBox.length<6}}">
+								<image class='img-ad' src='../../images/icon/add.png' />
+								<!-- +号图片 -->
+							</view>
+						</view>
+					</view>
+					<button class="ibtn" form-type="submit">发布</button>
+				</form>
+			</swiper-item>
+			<!-- 生活圈 -->
+			<swiper-item class='swiper noX'>
+				<form bindsubmit="shareSubmit">
+					<view class='record-item'>
+						<view class='name'>
+							<view class="text-share con">
+								<textarea name="shareCon" value="{{form2.shareCon}}" maxlength="{{max2}}"
+             bindinput="onContentInput2" placeholder="输入分享内容" />
+								<view class="indicator">{{currentWordNumber2}}/{{max2}}</view>
+							</view>
+						</view>
+					</view>
+					<view class='up-pic'>
+						<view class='flex pic-box'>
+							<block wx:key="imgbox" wx:for="{{shareImg}}">
+								<view class='ap-box'>
+									<view class='add-pic'>
+										<image class='add-pic' src='{{item}}' />
+										<view class='img-de' data-deindex='{{index}}' bindtap='imgDelete3'>
+											<image class='img' src='../../images/icon/delete.png' />
+											<!-- 右上角的删除按钮图片 -->
+										</view>
+									</view>
+								</view>
+							</block>
+							<view class='add-pic' bindtap='addPic3' wx:if="{{shareImg.length<6}}">
+								<image class='img-ad' src='../../images/icon/add.png' />
+								<!-- +号图片 -->
+							</view>
+						</view>
+					</view>
+					<button class="ibtn" form-type="submit">发布</button>
+				</form>
+			</swiper-item>
+		</swiper>
+	</scroll-view>
+</view>
+

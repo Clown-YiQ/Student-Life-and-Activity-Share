@@ -1,0 +1,143 @@
+<!--二手商品详情页-->
+<view class="container">
+	<view class="header">
+		<view class="userBar">
+			<image class="userHead" src="{{secondDetail.sc_userhead}}" />
+			<view class="userInfo">
+				<text class="userName">{{secondDetail.sc_cname}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="detailTitle">
+		<text class="detail-title">{{secondDetail.sc_title}}</text>
+	</view>
+	<view class="detailInfo">
+		<text class="detail-info">{{secondDetail.sc_con}}</text>
+	</view>
+	<view class="detailImg" wx:if="{{flag}}">
+		<a-img img-box="{{imgBox}}" />
+	</view>
+	<view class="localAndTime">
+		<view class="address">商品价格：{{secondDetail.sc_price}}元</view>
+	</view>
+	<view class="btnBar">
+		<!-- 弹出输入框 -->
+		<view class="comment" bindtap="showDialogBtn">评论</view>
+		<!-- 弹窗 -->
+		<view
+		 class="modal-mask"
+		 bindtap="hideModal"
+		 catchtouchmove="preventTouchMove"
+		 wx:if="{{showModal}}"
+		/>
+		<view class="modal-dialog" wx:if="{{showModal}}">
+			<form bindsubmit="onConfirm">
+				<view class="modal-title">评论信息</view>
+				<view class="modal-content">
+					<view class="modal-input">
+						<input
+						 name="comment"
+						 value="{{form.comment}}"
+						 placeholder-class="input-holder"
+						 type="text"
+						 maxlength="30"
+						 class="input"
+						 placeholder="评论"
+						/>
+					</view>
+				</view>
+				<view class="modal-footer">
+					<button class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</button>
+					<button class="btn-confirm" form-type="submit" data-status="confirm">确定</button>
+				</view>
+			</form>
+		</view>
+		<view class="share" wx:if="{{!isJoin}}" catch:tap="onCollec">收藏</view>
+		<view class="cancelled" wx:if="{{isJoin}}" catch:tap="onCancelled">已收藏</view>
+	</view>
+	<view/>
+	<!-- 评论区域 -->
+	<view class="commentBar">
+		<view
+		 class="commentState"
+		 wx:for="{{commentInfo}}"
+		 wx:for-item="comItem"
+		 wx:key="item"
+		>
+			<view class="comUser">
+				<image class="userHead" src="{{comItem.com_userhead}}" />
+				<view class="userCon">
+					<text class="userName">{{comItem.com_uname}}</text>
+					<text class="commentTime">{{comItem.com_time}}</text>
+				</view>
+			</view>
+			<!-- 弹出输入框 -->
+			<view
+			 class="answer"
+			 bindtap="showDialogBtn1"
+			 data-index="{{comItem.com_id}}"
+			 data-con="{{comItem.com_con}}"
+			 data-name="{{comItem.com_uname}}"
+			>回复
+			</view>
+			<view
+			 class="deleteCom"
+			 bindtap="deleteCom"
+			 data-cid="{{comItem.com_uid}}"
+			 data-index="{{comItem.com_id}}"
+			>删除
+			</view>
+			<!-- 弹窗 -->
+			<view
+			 class="modal-mask"
+			 bindtap="hideModal"
+			 catchtouchmove="preventTouchMove"
+			 wx:if="{{showModal1}}"
+			/>
+			<view class="modal-dialog" wx:if="{{showModal1}}">
+				<form bindsubmit="onAnswer" data-index="{{item.com_id}}" data-con="{{item.com_con}}">
+					<view class="modal-title">回复评论</view>
+					<view class="modal-content">
+						<view class="modal-input">
+							<input
+							 name="answer"
+							 value="{{answerForm.answer}}"
+							 placeholder-class="input-holder"
+							 type="text"
+							 maxlength="30"
+							 class="input"
+							 placeholder="评论"
+							/>
+						</view>
+					</view>
+					<view class="modal-footer">
+						<button class="btn-cancel" bindtap="onCancel1" data-status="cancel">取消</button>
+						<button class="btn-confirm" form-type="submit">确定</button>
+					</view>
+				</form>
+			</view>
+			<view class="commentText">{{comItem.com_con}}</view>
+			<view class="answerBar">
+				<view
+				 class="answerUser"
+				 wx:for="{{answerInfo}}"
+				 bindtap="showDialogBtn1"
+				 bindlongpress="deleteAnswer"
+				 data-index="{{item.com_id}}"
+				 data-con="{{comItem.com_con}}"
+				 data-name="{{item.com_uname}}"
+				 data-cid="{{comItem.com_uid}}"
+				 wx:if="{{comItem.com_con == item.com_parCon}}"
+				 wx:key="index"
+				>
+					<view class="userCon">
+						<text class="userName">{{item.com_uname}} 回复：{{item.com_parName}}</text>
+						<text class="answerTime">{{item.com_time}}</text>
+					</view>
+					<view class="answerText">{{item.com_con}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+

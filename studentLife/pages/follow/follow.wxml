@@ -1,0 +1,31 @@
+<!-- pages/followAndFans/followAndFans.wxml -->
+<view class="container">
+  <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <f-tag nav-list="{{navList}}" catch:title="onTapTitle"></f-tag>
+    <view class="item-detail">
+      <view hidden="{{currentIndex != 0}}">
+        <!-- 关注 -->
+        <input class="searchFollow" placeholder="搜索" placeholder-class="search" value="{{value}}" bindblur="onBlur"/>
+        <view class="follow"  wx:for="{{followUser}}" wx:key="index">
+          <view class="userBar" bind:tap="toPerson" data-index="{{item.follow_id}}">
+            <view class="userHead">
+              <image class="userPic" src="{{item.follow_userhead}}" />
+            </view>
+            <view class="userInfo">
+              <view class="userName">{{item.follow_name}}</view>
+            </view>
+          </view>
+          <view class="fBtn" >
+          <!-- wx:if="{{!isFollow}}" -->
+            <!-- <image class="plus" src="../../images/icon/plus.png" /> -->
+            <text class="fBtnText">{{item.follow_school}}</text>
+          </view>
+          <!-- <view class="fBtn" wx:if="{{isFollow}}" data-index="{{item.follow_id}}" bind:tap="onDeleteFollowTap">
+            <image class="yes"src="../../images/icon/yes.png" />
+            <text class="fBtnText">已关注</text>
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

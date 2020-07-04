@@ -1,0 +1,41 @@
+/* pages/JoinUser/JoinUser.wxss */
+.container{
+  width: 100%;
+}
+
+.title{
+  width: 100%;
+  font-size: 36rpx;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 4rpx;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.userBar{
+  width: 97%;
+  display: flex;
+  padding: 5rpx;
+  margin: 20rpx auto 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.userBar .userhead{
+  padding:5rpx;
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 10rpx;
+}
+
+.userBar .userhead .userheadImg{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.userBar .userName{
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-left: 10rpx;
+}

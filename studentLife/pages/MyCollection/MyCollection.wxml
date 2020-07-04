@@ -1,0 +1,15 @@
+<!-- pages/MyConnection/MyConnection.wxml -->
+<view class="container">
+  <view class="second" wx:for="{{collecInfo}}" wx:key="item">
+    <view class="secCon" data-index="{{item.sc_id}}" catch:tap="toDetail">
+      <view class="sec-con-head">
+        <view class="sec-title">{{item.sc_title}}</view>
+        <view class="ac-price">{{item.sc_price}}元</view>
+      </view>
+      <view class="sec-con">
+        <view class="sec-detail">{{item.sc_con}}</view>
+      </view>
+    </view>
+    <view class="delete" data-index="{{item.id}}" catch:tap="deleteCollec">取消收藏</view>
+  </view>
+</view>

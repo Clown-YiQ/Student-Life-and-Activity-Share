@@ -1,0 +1,49 @@
+<!-- pages/MyFans/MyFans.wxml -->
+<view class="container">
+  <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <f-tag nav-list="{{navList}}" catch:title="onTapTitle"></f-tag>
+    <view class="item-detail">
+      <view hidden="{{currentIndex != 0}}">
+        <!-- 关注 -->
+        <input class="searchFollow" placeholder="搜索" placeholder-class="search" value="{{value}}" bindblur="onBlur"/>
+        <view class="follow"  wx:for="{{fansInfo}}" wx:key="index">
+          <view class="userBar" bind:tap="toPerson" data-index="{{item.fans_id}}">
+            <view class="userHead">
+              <image class="userPic" src="{{item.fans_cuserhead}}" />
+            </view>
+            <view class="userInfo">
+              <view class="userName">{{item.fans_name}}</view>
+            </view>
+          </view>
+          <view class="fBtn">
+           <!-- wx:if="{{!isFollow}}" -->
+            <!-- <image class="plus" src="../../images/icon/plus.png" /> -->
+            <text class="fBtnText" data-index="{{item.id}}" bindtap="deleteFans">移除粉丝</text>
+          </view>
+          <!-- <view class="fBtn" wx:if="{{isFollow}}" data-index="{{item.follow_id}}" bind:tap="onDeleteFollowTap">
+            <image class="yes"src="../../images/icon/yes.png" />
+            <text class="fBtnText">已关注</text>
+          </view> -->
+        </view>
+      </view>
+      <view hidden="{{currentIndex != 1}}">
+        <!-- 权限设置 -->
+        <view class="auth"  wx:for="{{fansInfo}}" wx:key="index">
+          <view class="userBar">
+            <view class="userHead">
+              <image class="userPic" src="{{item.fans_cuserhead}}" />
+            </view>
+            <view class="userInfo">
+              <view class="userName">{{item.fans_name}}</view>
+            </view>
+          </view>
+          <view class="section section_gap">
+            <view class="body-view">
+                <switch checked="{{item.fans_auth}}" bindchange="switch1Change" color="#1296db" data-index="{{item.fans_id}}"/>
+            </view>
+        </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

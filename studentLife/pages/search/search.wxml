@@ -1,0 +1,25 @@
+<!-- pages/search/search.wxml -->
+<view class="container">
+	<view class="search-box">
+		<input
+		 class="search"
+		 type="text"
+		 placeholder="{{sort}}查找"
+		 value="{{value}}"
+		 bindblur="onBlur"
+		/>
+		<text class="text">搜索</text>
+	</view>
+	<ac-detail
+	 wx:if="{{!errorInfo}}"
+	 show-info="{{showInfo}}"
+	 img-list="{{imgList}}"
+	 user-id="{{userId}}"
+	 more="{{getMore}}"
+	 aid="{{aid}}"
+	/>
+	<sec-detail wx:if="{{!errorInfo}}" second-info="{{secondInfo}}" img-list1="{{imgList1}}" />
+	<share-detail wx:if="{{!errorInfo}}" share-info="{{shareInfo}}" share-img="{{shareImg}}" />
+	<view class="noInfo" wx:if="{{errorInfo}}">抱歉~搜索不到相关信息</view>
+</view>
+

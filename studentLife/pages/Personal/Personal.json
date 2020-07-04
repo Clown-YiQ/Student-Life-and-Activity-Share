@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "t-img":"/components/threeImg/cmp",
+    "t-tag":"/components/tag/cmp",
+    "ac-detail":"/components/activeDetail/cmp",
+    "sec-detail":"/components/secondDetail/cmp",
+    "share-detail":"/components/share/cmp"
+  }
+}

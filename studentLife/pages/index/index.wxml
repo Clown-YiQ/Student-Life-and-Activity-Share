@@ -1,0 +1,88 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+	<view class="headBar">
+		<view class="select-addr">
+			<!-- <picker mode="region" bindchange="changeArea">
+        <text class="addr">{{city}}</text>
+        <image class="triangle" src="../../images/icon/triangle.png" />
+      </picker> -->
+			<picker bindchange="changeSort" value="{{index}}" range="{{pickerSort}}">
+				<text class="addr">{{pickerSort[index] ? pickerSort[index] : '搜索类别'}}</text>
+				<image class="triangle" src="../../images/icon/triangle.png" />
+			</picker>
+		</view>
+		<view class="searchBar">
+			<h-search value="{{searchword}}" sort="{{sort}}" school="{{u_school}}" />
+		</view>
+	</view>
+	<view class="page-section page-section-spacing swiper">
+		<swiper
+		 indicator-dots="{{indicatorDots}}"
+		 circular="true"
+		 autoplay="true"
+		 interval="{{interval}}"
+		 duration="{{duration}}"
+		>
+			<block wx:for="{{background}}" wx:key="*this">
+				<swiper-item>
+					<view
+					 class="swiper-item"
+					 data-index="{{item.id}}"
+					 data-uid="{{item.act_cid}}"
+					 bind:tap="toDetail"
+					>
+						<image src="{{item.img}}" />
+						<view class="swiper-text">{{item.text}}</view>
+					</view>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="sort-tab">
+		<scroll-view
+		 scroll-y
+		 bindscrolltoupper="upper"
+		 bindscrolltolower="lower"
+		 bindscroll="scroll"
+		 scroll-into-view="{{toView}}"
+		 scroll-top="{{scrollTop}}"
+     enable-back-to-top="true"
+		>
+			<t-tag nav-list="{{navList}}" catch:title="onTapTitle" />
+			<!-- 内容布局 -->
+			<view class="item-detail">
+				<view hidden="{{currentIndex != 0}}">
+					<!-- 活动 -->
+					<ac-detail
+					 show-info="{{showInfo}}"
+					 img-list="{{imgList}}"
+					 user-id="{{userId}}"
+					 more="{{getMore}}"
+					 aid="{{aid}}"
+					 uSchool="{{u_school}}"
+					/>
+				</view>
+				<view hidden="{{currentIndex != 1}}">
+					<!-- 二手商品 -->
+					<sec-detail
+					 second-info="{{secondInfo}}"
+					 img-list1="{{imgList1}}"
+					 bid="{{bid}}"
+					 more="{{getSecMore}}"
+					 uSchool="{{u_school}}"
+					/>
+				</view>
+				<view hidden="{{currentIndex != 2}}">
+					<share-detail
+					 share-info="{{shareInfo}}"
+					 share-img="{{shareImg}}"
+					 cid="{{cid}}"
+					 more="{{getShaMore}}"
+					 uSchool="{{u_school}}"
+					/>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+</view>
+

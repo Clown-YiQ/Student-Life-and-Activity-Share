@@ -1,0 +1,9 @@
+<!--pages/Participants/Participants.wxml-->
+<view class="container">
+  <view class="userBar">
+    <view class="userHead">
+      <image class="headPic" src="../../images/icon/person.png"/>
+    </view>
+    <view class="userName">哈哈哈哈哈哈</view>
+  </view>
+</view>
